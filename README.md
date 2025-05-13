@@ -52,9 +52,9 @@ This is an open source bashscript to download tiktok videos with options to cust
 
 ## Name template 
 - You can customize the name template as you wish based on all the above fields.
-- As a default option, name is constructed as following in that order: upload_date (in form of +%Y-%m-%d), uploader, track, artist, & description  
-- Specifically: `echo $upload_dt_ok"-""@"$uploaderid_grp"_tr_"$track_grp"-art_"$artist_grp"_dscr_"$descr_short_ok | sed "s/ /_/g" | sed "s/__/_/g" | awk -v n="$max_chars" '{print substr($0, 1, n)}' | transcribe_replace   );`
-- Because there ir a system restrain on filename lenghts, max character restrains used on these chosen fields:
+- As a default option, name is constructed as following in that order: upload_date (in form of +%Y-%m-%d), uploader, track, artist, & description.
+
+- Because there is a system restrain on filename lenghts, max character restrains used on these chosen fields:
 -  max characters in filename is set at final stage to 150.
 -  Date has by default 11 characters (in form of 2025-12-31) - why 11 and not 10? I dont know
 -  upload(username)=25 - username cannot exists 24 characters in tiktok (as of May 2025)
