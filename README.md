@@ -91,7 +91,7 @@ Some cleaning is done on the json fields before creating the new file name. The 
  - Note that 2 requests are done per download in tiktok based on yt-dlp: For json file and the video (mp4).
  - Each video is saved under the tiktok username. If starts from ".", a "@" is added. 
 
-In a folder that you have created the file "l.txt" with tiktok video urls, run in bash in the same folder `./tiktok.sh`. 
+In a folder that you have created the file "l.txt" with tiktok video urls, run in bash in the same folder `./tiktok_clean.sh`. 
 - The download will starts.
 - It must have execution permissions. 
 
