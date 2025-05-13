@@ -86,7 +86,8 @@ Some cleaning is done on the json fields before creating the new file name. The 
 ## How to use it 
  - You must put the urls of tiktok video in a file called "l.txt" (links).
  - The urls must have the form of `https://www.tiktok.com/@fotomelodios/video/7497228965933747478`
- - Each url must be in a new line. No spaces, no comments, no ?lang_en, nothing else.
+ - Each url must be in a new line. no "?lang_en" etc. extentions.
+ - Giving a space between urls stops the script. This is useful if you add new urls in preexisting file "l.txt". 
  - A restriction on the speed of download is set to 100K. you can change it.
  - Note that 2 requests are done per download in tiktok based on yt-dlp: For json file and the video (mp4).
  - Each video is saved under the tiktok username. If starts from ".", a "@" is added. 
