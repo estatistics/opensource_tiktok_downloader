@@ -94,22 +94,11 @@ Some cleaning is done on the json fields before creating the new file name. The 
 
 In a folder that you have created "l.txt" with tiktok video urls, run in bash in same folder `./tiktok.sh`. The download will starts.
 
+## Problems 
+`Your IP address is blocked from accessing this post`
+- In this problem, I remove the specified url that caused the problem and I wait to start download the next day (12-24hours).
+- I dont know what is this about or when this ban is exactly removed. Next day, I can download other urls except from the specific ones.
 
 
-      
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
+Note that the script creates the following file `l_notexists.txt` under the username folder, if the respond of tiktok is that no json file found. 
+ - `l_notexists.txt` file contains the url that yt-dlp did not found.  
