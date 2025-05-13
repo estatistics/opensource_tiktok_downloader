@@ -62,7 +62,7 @@ You can customize the name template as you wish based on all the above fields. A
  -  Description length = 150-(length of Date+upload(username)+track+artist).
 
 ## Cleaning fields
-Some cleaning is done on the json fields before creating the new file name. The following string are removed entirely from json extracted fields. This can maximize the usefull information on the filename. Note that these strings are NOT deleted from the cleaned json file, the second one. they are only removed from before creation of the filename template:
+Some cleaning is done on the json fields before creating the new file name. The following strings are removed entirely from json extracted fields. This can maximize the usefull information that can be stored on the filename. Note that these strings are NOT deleted from the cleaned 2nd json file. They are only removed before creation of the filename template:
 
 - fy_fyp
 - fypp
