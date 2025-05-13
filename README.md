@@ -1,6 +1,6 @@
 # opensource tiktok downloader with name customization based on yt-dlp 
 
-This is an open source bashscript to download tiktok videos with options to customize the name of the downloaded video/json. 
+This is an open source bashscript to download tiktok videos with options to customize the name of the downloaded video/json. Please read it before use!
 
 ### What it does?
 - 1st step - Download the json file with a temporary filename.
@@ -60,34 +60,44 @@ This is an open source bashscript to download tiktok videos with options to cust
 -  upload(username)=25 - username cannot exists 24 characters in tiktok (as of May 2025)
 -  track - max characters 40 
 -  artist - max characters 60
--  Description lenght is based on max characters allowed without the lenght 
+-  Description lenght is created using the remaining lenght until total max number of characters is reached (set to 150).
+-  Description lenght = 150-(lenght of Date+upload(username)+track+artist).
+
+## Cleaning fields
+Some cleaning is done on the json fields before creating the new file name. The following string are removed entirely from json extracted fields. This can maximize the usefull information on the filename. Note that these strings are NOT deleted from the cleaned json file, the second one. they are only removed from before creation of the filename template:
+
+- fy_fyp
+- fypp
+- ppp
+- fupp
+- viralvideos
+- φοργιου (greek words)
+- μπεςγαμω (greek words)
+- original_sound
+- noprinted characters using sed
+- emoticons, symbols etc. using perl syntax `perl -CSD -pe 's/[^\p{L}\p{N}._ -]+//g'`
+
+- Also, usernames that starts from ".", it is added "@" before the dot, in order not becoming hidden files. 
+
+## Info that is presented in addition of the yt-dlp info:
+ - Strings of the extracted fields eg. date, uploader username, track, artist, description
+ - number of characters per field
+ - the url of tiktok video
+
+## How to use it 
+ - You must put the urls of tiktok video in a file called "l.txt" (links).
+ - The urls must have the form of `https://www.tiktok.com/@fotomelodios/video/7497228965933747478`
+ - Each url must be in a new line. No spaces, no comments, no ?lang_en, nothing else.
+ - A restriction on the speed of download is set to 100K. you can change it.
+ - Note that 2 requests are done per download in tiktok based on yt-dlp: For json file and the video (mp4).
+ - Each video is saved under the tiktok username. If starts from ".", a "@" is added. 
+
+In a folder that you have created "l.txt" with tiktok video urls, run in bash in same folder `./tiktok.sh`. The download will starts.
 
 
 
-
-       
-        ntrack=40;
-        nartist=60;
-        
-        max_chars=150;
-        echo "upload date raw:" $upload_date_grp;
-        echo "upload date edited:"$upload_dt_ok;
-        echo "uploaded id:"$uploaderid_grp;
-        echo "track:"$track_grp;
-        echo "artist:"$artist_grp;
-        echo "description:"$descr_grp_ok;
-
-        # echo the number of chars per field
-        echo "upload_date nm:"$upload_date_nm;
-        echo "uploaderid nm:"$uploaderid_nm;
-        echo "track nm:"$track_nm;
-        echo "artist nm:"$artist_nm;
-        echo "description nm:"$description_nm;
-        tot_num=$(($upload_date_nm + $uploaderid_nm+$track_nm+$artist_nm));
-        echo "total nm -descr:"$tot_num;
-       max_chars=150;
-       nm_no_descr=$( expr $max_chars - $tot_num);
-       echo "remain nm:"$nm_no_descr;
+      
+   
 
 
 
