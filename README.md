@@ -77,7 +77,8 @@ Some cleaning is done on the json fields before creating the new file name. The 
 - noprinted characters using sed
 - emoticons, symbols etc. using perl syntax `perl -CSD -pe 's/[^\p{L}\p{N}._ -]+//g'`
 
-- Also, usernames that starts from ".", it is added "@" before the dot, in order not becoming hidden files. 
+- Also, usernames that starts from ".", it is added "@" before the dot, in order not becoming hidden files.
+- Also, perl is used to transcribe all "letters with tone/s" like "ά" to "α", keeping the nationality of the letters. 
 
 ## Info that is presented in addition of the yt-dlp info:
  - Strings of the extracted fields eg. date, uploader username, track, artist, description
@@ -101,4 +102,6 @@ In a folder that you have created "l.txt" with tiktok video urls, run in bash in
 
 
 Note that the script creates the following file `l_notexists.txt` under the username folder, if the respond of tiktok is that no json file found. 
- - `l_notexists.txt` file contains the url that yt-dlp did not found.  
+ - `l_notexists.txt` file contains the url that yt-dlp did not found.
+
+Have a nice tiktok video experience!
