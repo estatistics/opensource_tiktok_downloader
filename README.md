@@ -51,7 +51,7 @@ This is an open source bashscript to download tiktok videos with options to cust
 - 4rth step & final step - it downloads the tiktok video and rename/saving both mp4 and the new json file with the new name template.
 
 ## Name template 
-You can customize the name template as you wish based on all the above fields. As a default option, name is constructed as following in that order: `upload_date (in form of +%Y-%m-%d), uploader, track, artist, & description`.Because there is a system restrain on filename lenghts, max character restrains used on these chosen fields:
+You can customize the name template as you wish based on all the above fields. As a default option, name is constructed as following in that order: `upload_date (in form of +%Y-%m-%d), uploader, track, artist, & description`. Because there is a system restrain on filename lenghts, max character restrains used on these chosen fields:
   
  -  max characters in filename is set at final stage to 150.
  -  Date has by default 11 characters (in form of 2025-12-31) - why 11 and not 10? I dont know
